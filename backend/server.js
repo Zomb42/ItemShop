@@ -1,3 +1,7 @@
+import cors from 'cors';
+
+// Add this before your routes
+
 //const express = require('express');
 import express from "express";
 import dotenv from "dotenv";
@@ -7,7 +11,7 @@ import productRoutes from "./routes/product.js";
 
 dotenv.config()
 const app = express();
-
+app.use(cors());
 const PORT = process.env.PORT || 3000
 
 app.use(express.json()); //allows us to accept JSON data
